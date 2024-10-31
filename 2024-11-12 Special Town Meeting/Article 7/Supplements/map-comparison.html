@@ -4,12 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Map Comparison - July 2021 vs. September 2024</title>
+    <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
+<link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css"> 
 </head>
 <body>
     <h1>Water Supply Protection District Map Comparison</h1>
-    
-    <!-- Embed the JuxtaposeJS iframe here -->
-    <iframe frameborder="0" class="juxtapose" width="100%" height="10800" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=c5b73590-978e-11ef-9397-d93975fe8866"></iframe>
-    
+    <div id="slider">    
+    <script>
+            slider = new juxtapose.JXSlider('#slider',
+                [
+                    {
+                        src: 'https://raw.githubusercontent.com/loconnell-lunenburgma/TownMeetings/refs/heads/main/2024-11-12%20Special%20Town%20Meeting/Article%207/Supplements/2021-07_%20Lunenburg%20Aquifer%20Protection%20Districts%20(July%202021%20map%20referenced%20in%20Water%20Supply%20Protection%20District%20Warrant%20Article).webp',
+                        label: 'July 2021 Map',
+                        credit: 'Lunenburg Water District'
+                    },
+                    {
+                        src: 'https://raw.githubusercontent.com/loconnell-lunenburgma/TownMeetings/refs/heads/main/2024-11-12%20Special%20Town%20Meeting/Article%207/Supplements/2024-09_%20Lunenburg%20Water%20Supply%20Protection%20District%20Map%20(created%20by%20Water%20District%20hydrogeologist).webp',
+                        label: 'September 2024 Map',
+                        credit: "Lunenburg Water District"
+                    }
+                ],
+                {
+                    animate: true,
+                    showLabels: true,
+                    showCredits: true,
+                    startingPosition: "50%",
+                    makeResponsive: true
+                });
+        </script>
+</div>
 </body>
 </html>
