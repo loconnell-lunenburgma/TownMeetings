@@ -5,33 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Map Comparison - July 2021 vs. September 2024</title>
     <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
-<link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css"> 
+    <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css"> 
+
+    <style>
+        /* Center the main content */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Container for centering and responsive scaling */
+        #slider-container {
+            max-width: 800px; /* Set a max width for the slider */
+            width: 90%; /* Make it responsive */
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Style the slider to add border and padding */
+        #slider {
+            border: 2px solid black;
+            height: 400px; /* Adjust height to your preference */
+        }
+
+        h1 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Water Supply Protection District Map Comparison</h1>
-    <div id="slider">    
+    <div id="slider-container">
+        <h1>Water Supply Protection District Map Comparison</h1>
+        <div id="slider"></div>    
+    </div>
+
     <script>
-            slider = new juxtapose.JXSlider('#slider',
-                [
-                    {
-                        src: 'https://raw.githubusercontent.com/loconnell-lunenburgma/TownMeetings/refs/heads/main/2024-11-12%20Special%20Town%20Meeting/Article%207/Supplements/2021-07_%20Lunenburg%20Aquifer%20Protection%20Districts%20(July%202021%20map%20referenced%20in%20Water%20Supply%20Protection%20District%20Warrant%20Article).webp',
-                        label: 'July 2021 Map',
-                        credit: 'Lunenburg Water District'
-                    },
-                    {
-                        src: 'https://raw.githubusercontent.com/loconnell-lunenburgma/TownMeetings/refs/heads/main/2024-11-12%20Special%20Town%20Meeting/Article%207/Supplements/2024-09_%20Lunenburg%20Water%20Supply%20Protection%20District%20Map%20(created%20by%20Water%20District%20hydrogeologist).webp',
-                        label: 'September 2024 Map',
-                        credit: "Lunenburg Water District"
-                    }
-                ],
+        slider = new juxtapose.JXSlider('#slider',
+            [
                 {
-                    animate: true,
-                    showLabels: true,
-                    showCredits: true,
-                    startingPosition: "50%",
-                    makeResponsive: true
-                });
-        </script>
-</div>
+                    src: 'https://raw.githubusercontent.com/loconnell-lunenburgma/TownMeetings/refs/heads/main/2024-11-12%20Special%20Town%20Meeting/Article%207/Supplements/2021-07_%20Lunenburg%20Aquifer%20Protection%20Districts%20(July%202021%20map%20referenced%20in%20Water%20Supply%20Protection%20District%20Warrant%20Article).webp',
+                    label: 'July 2021 Map',
+                    credit: 'Lunenburg Water District'
+                },
+                {
+                    src: 'https://raw.githubusercontent.com/loconnell-lunenburgma/TownMeetings/refs/heads/main/2024-11-12%20Special%20Town%20Meeting/Article%207/Supplements/2024-09_%20Lunenburg%20Water%20Supply%20Protection%20District%20Map%20(created%20by%20Water%20District%20hydrogeologist).webp',
+                    label: 'September 2024 Map',
+                    credit: "Lunenburg Water District"
+                }
+            ],
+            {
+                animate: true,
+                showLabels: true,
+                showCredits: true,
+                startingPosition: "50%",
+                makeResponsive: true
+            }
+        );
+    </script>
 </body>
 </html>
